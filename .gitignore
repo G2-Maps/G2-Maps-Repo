@@ -348,3 +348,11 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+
+# Personal
+G2-Maps/G2-Maps/obj/
+G2-Maps/G2-Maps/bin/
+G2-Maps/G2-Maps.Android/obj/
+G2-Maps/G2-Maps.Android/bin/
