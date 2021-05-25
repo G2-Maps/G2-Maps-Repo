@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2-Maps.Android", "G2-Maps\G2-Maps.Android\G2-Maps.Android.csproj", "{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G2-Maps", "G2-Maps\G2-Maps\G2-Maps.csproj", "{D9938B5E-FB2D-409B-B265-B6DD493F27A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C76FF2DE-B9A6-4EFF-9DD1-50F42BF0B1C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9938B5E-FB2D-409B-B265-B6DD493F27A1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A17F117D-D6DB-47A5-A516-B158A8849515}
+	EndGlobalSection
+EndGlobal
