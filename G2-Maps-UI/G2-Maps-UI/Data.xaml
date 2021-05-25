@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="G2_Maps_UI.Data"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:G2_Maps_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <ScrollBar x:Name="scroll" Width="20" Orientation="Vertical" HorizontalAlignment="Right" Visibility="Visible" IndicatorMode="MouseIndicator" />
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="Titolo" Text="Regione: " Grid.ColumnSpan="2"/>
+
+            <TextBlock Text="Contagi Gionalieri:" Grid.Row="1"/>
+            <TextBlock Text="" Grid.Row="1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Contagi Totali:" Grid.Row="1" Grid.Column="1"/>
+            <TextBlock Text="" Grid.Row="1" Grid.Column="1" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Vaccini Gionalieri:" Grid.Row="2"/>
+            <TextBlock Text="" Grid.Row="2" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Vaccini Totali:" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Text="" Grid.Row="2" Grid.Column="1" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="Tipo Vaccino" Grid.Row="3"/>
+            <TextBlock Text="" Grid.Row="3" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                <StackPanel>
+                    <TextBlock Text="Pfizer:  "/>
+                    <TextBlock Text="Astrazeneca:  "/>
+                    <TextBlock Text="JeJ:  "/>
+                    <TextBlock Text="Moderna:  "/>
+                </StackPanel>
+                <StackPanel Margin="30, 0, 0, 0">
+                    <TextBlock Text="" FontWeight="Bold"/>
+                    <TextBlock Text="" FontWeight="Bold"/>
+                    <TextBlock Text="" FontWeight="Bold"/>
+                    <TextBlock Text="" FontWeight="Bold"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
