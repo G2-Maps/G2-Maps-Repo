@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
+using Xamarin.Essentials;
+using G2_Maps.Model;
 
 namespace G2_Maps
 {
@@ -32,14 +34,24 @@ namespace G2_Maps
                 await DisplayAlert("Info Window Clicked", $"Info of {pinName}.", "Ok");
             };
 
-            //pin.MarkerClicked += async (s, args) =>
-            //{
-            //    string pinName = ((Pin)s).Label;
-            //    await DisplayAlert("Info Window Clicked", $"The info window was clicked for {pinName}.", "Ok");
-            //};
-
-
             viewMap.Pins.Add(pin);
+
+            A();
+        }
+
+        public void LoadData()
+        {
+
+        }
+
+        public async void Alert(String a)
+        {
+            await DisplayAlert("Alert", a, "Ok");
+        }
+
+        public async void A()
+        {
+            await DataManagement.GetFromInternet_Async();
         }
     }
 }
