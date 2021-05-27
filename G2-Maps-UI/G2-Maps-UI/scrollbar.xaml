@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="G2_Maps_UI.scrollbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:G2_Maps_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Grid Background="#FFE1E1E1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="title" Text="   NOMEREGIONE" FontStyle="Italic" FontWeight="Bold" VerticalAlignment="Center"/>
+        <StackPanel>
+            <TextBlock x:Name="lastUpdate" Text="Ultimo Aggiornamento: " FontSize="13" HorizontalAlignment="Right" FontStyle="Italic" FontWeight="SemiBold"/>
+            <TextBlock x:Name="ultimoaggiorn" Text="" FontSize="15" HorizontalAlignment="Right" Grid.Column="1"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <Button Content="Vaccini Gionalieri" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" CornerRadius="15" Width="300"/>
+            <TextBlock x:Name="vacciniGiorn" Text="" TextAlignment="Center"  HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Width="300">
+            <Button Content="Vaccini Totali" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" CornerRadius="15" Width="300"/>
+            <TextBlock x:Name="vacciniTot" Text="" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontStyle="Italic" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Width="300">
+            <Button Content="Ultima Consegna" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" CornerRadius="15" Width="300"/>
+            <TextBlock Text="data" TextAlignment="Center" HorizontalAlignment="Right" FontStyle="Italic"/>
+            
+            <StackPanel Orientation="Horizontal">
+                <StackPanel >
+                    <TextBlock Text="Numro Dosi:" FontStyle="Italic"/>
+                    <TextBlock Text="Fornitore:" FontStyle="Italic"/>
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock x:Name="dosiUC"      Text="" TextAlignment="Center" FontStyle="Italic"/>
+                    <TextBlock x:Name="fornitoreUC" Text="" TextAlignment="Center" FontStyle="Italic"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Width="300">
+            <Button Content="Consegne Totali" FontStyle="Italic" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" CornerRadius="15" Width="300"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="N' consegne totali:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                    <TextBlock Text="" TextAlignment="Center" FontStyle="Italic"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel >
+                        <TextBlock Text="Fornitori:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                        <TextBlock Text="   -Pfizer:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                        <TextBlock Text="   -Moderna:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                        <TextBlock Text="   -JeJ:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                        <TextBlock Text="   -Astrazeneca:" TextAlignment="Center" HorizontalAlignment="Left" FontStyle="Italic"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock/>
+                        <TextBlock x:Name="datiPF" Text="" TextAlignment="Center" FontStyle="Italic"/>
+                        <TextBlock x:Name="datiMO" Text="" TextAlignment="Center" FontStyle="Italic"/>
+                        <TextBlock x:Name="datiJJ" Text="" TextAlignment="Center" FontStyle="Italic"/>
+                        <TextBlock x:Name="datiAS" Text="" TextAlignment="Center" FontStyle="Italic"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
