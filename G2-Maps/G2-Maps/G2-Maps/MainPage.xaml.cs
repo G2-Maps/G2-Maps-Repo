@@ -35,23 +35,11 @@ namespace G2_Maps
             };
 
             viewMap.Pins.Add(pin);
-
-            A();
         }
 
         public void LoadData()
         {
 
-        }
-
-        public async void Alert(String a)
-        {
-            await DisplayAlert("Alert", a, "Ok");
-        }
-
-        public async void A()
-        {
-            await DataManagement.GetFromInternet_Async();
         }
     }
 }
