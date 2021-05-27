@@ -74,4 +74,15 @@ namespace G2_Maps.Model
         }
     }
 
+    /*
+        ultima consegna:
+        -fornitore
+        -dosi
+        -data
+
+        consegna tot:
+        -n consegne tot
+        -consegne tot x fornitore
+        -grafico x=data,y=consegne,colore=fornitore (grafico a punti)
+     */
 }
