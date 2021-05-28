@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="G2_Maps.Data">
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="#FFE1E1E1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.3*"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="End" IsVisible="true" Grid.Row="1"/>
+
+            <Button x:Name="back" Text="X" FontAttributes="Italic" HorizontalOptions="End" FontSize="Large" BackgroundColor="Transparent"/>
+
+            <maps:Map x:Name="viewMap" MapType="Street" Grid.Row="2"/>
+
+            <Frame x:Name="FrameScollbar" Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

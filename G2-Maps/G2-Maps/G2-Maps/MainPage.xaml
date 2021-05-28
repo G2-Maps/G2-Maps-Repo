@@ -5,13 +5,8 @@
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              x:Class="G2_Maps.MainPage">
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10*"/>
-        </Grid.RowDefinitions>
-        <Label x:Name="a"/>
-        <maps:Map x:Name="viewMap" MapType="Street" Grid.Row="1"/>
+    <Grid BackgroundColor="#FFE1E1E1">
+        <Frame x:Name="MainFrame"/>
     </Grid>
 
 </ContentPage>
