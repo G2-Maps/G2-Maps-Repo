@@ -1,0 +1,158 @@
+{
+  "data": [
+    {
+      "name": "Lombardia",
+      "coordinates": {
+        "x": 45.604739,
+        "y": 9.689456
+      }
+    },
+
+    {
+      "name": "Piemonte",
+      "coordinates": {
+        "x": 45.130057,
+        "y": 7.986575
+      }
+    },
+
+    {
+      "name": "Valle d'Aosta",
+      "coordinates": {
+        "x": 45.721837,
+        "y": 7.419406
+      }
+    },
+
+    {
+      "name": "Bolzano",
+      "coordinates": {
+        "x": 46.680465,
+        "y": 11.429307
+      }
+    },
+    {
+      "name": "Sicilia",
+      "coordinates": {
+        "x": 37.594891,
+        "y": 14.085232
+      }
+    },
+    {
+      "name": "Calabria",
+      "coordinates": {
+        "x": 39.094615,
+        "y": 16.562618
+      }
+    },
+    {
+      "name": "Trento",
+      "coordinates": {
+        "x": 46.194023,
+        "y": 10.967881
+      }
+    },
+    {
+      "name": "Puglia",
+      "coordinates": {
+        "x": 40.996262,
+        "y": 16.647747
+      }
+    },
+    {
+      "name": "Basilicata",
+      "coordinates": {
+        "x": 40.507977,
+        "y": 16.094725
+      }
+    },
+    {
+      "name": "Veneto",
+      "coordinates": {
+        "x": 45.626458,
+        "y": 12.044541
+      }
+    },
+    {
+      "name": "Campania",
+      "coordinates": {
+        "x": 40.951659,
+        "y": 14.782145
+
+
+      }
+    },
+    {
+      "name": "Lazio",
+      "coordinates": {
+        "x": 42.002524,
+        "y": 12.593626
+      }
+    },
+    {
+      "name": "Friuli Venezia Giulia",
+      "coordinates": {
+        "x": 46.135060,
+        "y": 13.033311
+      }
+    },
+    {
+      "name": "Abruzzo",
+      "coordinates": {
+        "x": 42.274860,
+        "y": 13.876743
+      }
+    },
+    {
+      "name": "Liguria",
+      "coordinates": {
+        "x": 44.415085,
+        "y": 9.012315
+      }
+    },
+    {
+      "name": "Marche",
+      "coordinates": {
+        "x": 43.426404,
+        "y": 13.202754
+      }
+    },
+    {
+      "name": "Emilia Romagna",
+      "coordinates": {
+        "x": 44.585521,
+        "y": 11.204087
+      }
+    },
+    {
+      "name": "Toscana",
+      "coordinates": {
+        "x": 43.437051,
+        "y": 11.158911
+      }
+    },
+    {
+      "name": "Umbria",
+      "coordinates": {
+        "x": 43.380046,
+        "y": 12.346665
+      }
+    },
+    {
+      "name": "Sardegna",
+      "coordinates": {
+        "x": 40.164101,
+        "y": 9.067326
+      }
+    },
+    {
+      "name": "Molise",
+      "coordinates": {
+        "x": 41.664260,
+        "y": 14.636320
+
+      }
+    }
+  ]
+}
+
