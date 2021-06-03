@@ -85,4 +85,39 @@ namespace G2_Maps.Model
         -consegne tot x fornitore
         -grafico x=data,y=consegne,colore=fornitore (grafico a punti)
      */
+
+
+    public class Regions
+    {
+        public Region[] data { get; set; }
+    }
+
+    public class Region
+    {
+        public string name { get; set; }
+        public Coordinates coordinates { get; set; }
+    }
+
+    public class Coordinates
+    {
+        public float x { get; set; }
+        public float y { get; set; }
+    }
+
+
+    public class SummaryData
+    {
+        public int dosi_Total { get; set; }
+        public Dictionary<String, int> fornitoreTotal { get; set; }
+        public ShortData consegneLatest {get; set;}
+        public IEnumerable<ShortData> consegneVaccini { get; set; }
+    }
+
+    public class ShortData
+    {
+        public DateTime data_consegna { get; set; }
+        public string fornitore { get; set; }
+        public int numero_dosi { get; set; }
+    }
+
 }

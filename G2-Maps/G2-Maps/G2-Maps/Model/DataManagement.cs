@@ -20,6 +20,7 @@ namespace G2_Maps.Model
 {
     class DataManagement
     {
+        private static Consegne_Vaccini_Latest Consegne_Vaccini_Latest;
         private static String[] Files = 
             {
                 "consegne-vaccini-latest.json",
@@ -33,8 +34,6 @@ namespace G2_Maps.Model
         {
             try
             {
-
-
                 HttpClient httpClient = new HttpClient();
                 String file = "last-update-dataset.json";
                 String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), file);
@@ -72,24 +71,37 @@ namespace G2_Maps.Model
                 }
             }
 
+            String _fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json");
+
+            if (!File.Exists(_fileName))
+            {
+                await App.MyMainPage.DisplayAlert("Errore nei dati", "Dati locali non disponibili", "Chiudi l'applicazione");
+                throw new Exception();
+            }
+
+
+
             String result;
 
-            result = File.ReadAllText(Files[0]);
-            var consegne_vaccini_latest = JsonConvert.DeserializeObject<Consegne_Vaccini_Latest>(result);
+            result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Files[0]));
+            Consegne_Vaccini_Latest = JsonConvert.DeserializeObject<Consegne_Vaccini_Latest>(result);
 
-            result = File.ReadAllText(Files[1]);
+            result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Files[1]));
             var punti_somministrazione_latest = JsonConvert.DeserializeObject<Punti_Somministrazione_Latest>(result);
+
+            result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json"));
+            var regions = JsonConvert.DeserializeObject<Regions>(result);
+
+            App.MyMainPage.DisplayPins_Async(regions);
         }
 
-        private static void GetData_Regione(Punti_Somministrazione_Latest punti_Somministrazione_Latest, Consegne_Vaccini_Latest consegne_Vaccini_Latest, String name)
+        public static SummaryData GetData_Regione(String name)
         {
             name = name.ToUpper();
 
-            var puntiSomministrazione = punti_Somministrazione_Latest.data.Where(p => p.nome_area.ToUpper().Equals(name));
-
-            var consegneVaccini = consegne_Vaccini_Latest.data.Where(p => p.nome_area.ToUpper().Equals(name))
+            var consegneVaccini = Consegne_Vaccini_Latest.data.Where(p => p.nome_area.ToUpper().Equals(name))
                                     .OrderBy(c => c.data_consegna)
-                                    .Select(f => new 
+                                    .Select(f => new ShortData
                                     { 
                                         data_consegna = f.data_consegna, 
                                         fornitore = f.fornitore, 
@@ -107,6 +119,16 @@ namespace G2_Maps.Model
             }
 
             int numero_dosiTotal = fornitoreTotal.Values.Sum();
+
+            var a = new SummaryData
+            {
+                dosi_Total = numero_dosiTotal,
+                fornitoreTotal = fornitoreTotal,
+                consegneLatest = consegneLatest,
+                consegneVaccini = consegneVaccini
+            };
+
+            return a;
         }
 
         private static async void GetDataOnline_Async()
@@ -122,6 +144,12 @@ namespace G2_Maps.Model
                     String result = await httpClient.GetStringAsync(url);
                     File.WriteAllText(fileName, result);
                 }
+
+                String _fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json");
+                String _url = "https://raw.githubusercontent.com/G2-Maps/G2-Maps-Repo/main/Regions.json";
+                String _result = await httpClient.GetStringAsync(_url);
+                File.WriteAllText(_fileName, _result);
+
             }
             catch (Exception)
             {
