@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="G2_Maps.Scrollbar">
@@ -7,65 +7,65 @@
         <Grid BackgroundColor="#FFE1E1E1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label x:Name="title" Text="   NOMEREGIONE" FontAttributes="Italic" FontSize="Large" VerticalOptions="Center"/>
+            <Label x:Name="title" Text="   NOMEREGIONE" FontAttributes="Italic" FontSize="Large" TextColor="Black" VerticalOptions="Center"/>
             <StackLayout>
-                <Label x:Name="lastUpdate" Text="Ultimo Aggiornamento: " FontSize="13" HorizontalOptions="End" FontAttributes="Italic" />
+                <Label x:Name="lastUpdate" Text="Ultimo Aggiornamento: " FontSize="13" HorizontalOptions="End" TextColor="Black" FontAttributes="Italic" />
                 <Label x:Name="ultimoaggiorn" Text="" FontSize="15" HorizontalOptions="End" Grid.Column="1"/>
             </StackLayout>
 
             <StackLayout Grid.Row="1">
-                <Button Text="Vaccini Gionalieri" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" CornerRadius="15" />
+                <Button Text="Vaccini Gionalieri" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
                 <Label x:Name="vacciniGiorn" Text=""   HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Italic"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" >
-                <Button Text="Vaccini Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" CornerRadius="15" />
+                <Button Text="Vaccini Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
                 <Label x:Name="vacciniTot" Text=""  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Italic" />
             </StackLayout>
 
             <StackLayout Grid.Row="3" >
-                <Button Text="Ultima Consegna" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" CornerRadius="15" />
-                <Label Text="data"  HorizontalOptions="End" FontAttributes="Italic"/>
+                <Button Text="Ultima Consegna" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
+                <Label  x:Name="Date_consegne" Text="" HorizontalOptions="End" FontAttributes="Italic" TextColor="Black"/>
 
                 <StackLayout Orientation="Horizontal">
                     <StackLayout >
-                        <Label Text="Numero Dosi:" FontAttributes="Italic"/>
-                        <Label Text="Fornitore:" FontAttributes="Italic"/>
+                        <Label Text="Numero Dosi:" FontAttributes="Italic" TextColor="Black"/>
+                        <Label Text="Fornitore:" FontAttributes="Italic" TextColor="Black"/>
                     </StackLayout>
                     <StackLayout>
-                        <Label x:Name="dosiUC"      Text=""  FontAttributes="Italic"/>
-                        <Label x:Name="fornitoreUC" Text=""  FontAttributes="Italic"/>
+                        <Label x:Name="dosiUC"      Text=""  FontAttributes="Italic" TextColor="Black"/>
+                        <Label x:Name="fornitoreUC" Text=""  FontAttributes="Italic" TextColor="Black"/>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
 
             <StackLayout Grid.Row="4" >
-                <Button Text="Consegne Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" CornerRadius="15" />
+                <Button Text="Consegne Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="N' consegne totali:"  HorizontalOptions="Start" FontAttributes="Italic"/>
-                        <Label Text=""  FontAttributes="Italic"/>
+                        <Label Text="N' consegne totali:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
+                        <Label Text=""  FontAttributes="Italic" TextColor="Black"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout >
-                            <Label Text="Fornitori:"  HorizontalOptions="Start" FontAttributes="Italic"/>
-                            <Label Text="   -Pfizer:"  HorizontalOptions="Start" FontAttributes="Italic"/>
-                            <Label Text="   -Moderna:"  HorizontalOptions="Start" FontAttributes="Italic"/>
-                            <Label Text="   -JeJ:"  HorizontalOptions="Start" FontAttributes="Italic"/>
-                            <Label Text="   -Astrazeneca:"  HorizontalOptions="Start" FontAttributes="Italic"/>
+                            <Label Text="Fornitori:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
+                            <Label Text="   -Pfizer:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
+                            <Label Text="   -Moderna:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
+                            <Label Text="   -JeJ:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
+                            <Label Text="   -Astrazeneca:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
                         </StackLayout>
                         <StackLayout>
                             <Label/>
-                            <Label x:Name="datiPF" Text=""  FontAttributes="Italic"/>
-                            <Label x:Name="datiMO" Text=""  FontAttributes="Italic"/>
-                            <Label x:Name="datiJJ" Text=""  FontAttributes="Italic"/>
-                            <Label x:Name="datiAS" Text=""  FontAttributes="Italic"/>
+                            <Label x:Name="datiPF" Text=""  FontAttributes="Italic" TextColor="Black"/>
+                            <Label x:Name="datiMO" Text=""  FontAttributes="Italic" TextColor="Black"/>
+                            <Label x:Name="datiJJ" Text=""  FontAttributes="Italic" TextColor="Black"/>
+                            <Label x:Name="datiAS" Text=""  FontAttributes="Italic" TextColor="Black"/>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
