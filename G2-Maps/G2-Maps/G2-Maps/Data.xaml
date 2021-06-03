@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
@@ -13,13 +13,14 @@
                 <RowDefinition Height="0.3*"/>
             </Grid.RowDefinitions>
 
-            <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="End" IsVisible="true" Grid.Row="1"/>
+            <ScrollView x:Name="scroll" Orientation="Vertical" HorizontalOptions="End" IsVisible="true" Grid.Row="1">
+                <Frame x:Name="FrameScollbar" Grid.Row="1"/>
+            </ScrollView>
 
             <Button x:Name="back" Text="X" FontAttributes="Italic" HorizontalOptions="End" FontSize="Large" BackgroundColor="Transparent"/>
 
             <maps:Map x:Name="viewMap" MapType="Street" Grid.Row="2"/>
 
-            <Frame x:Name="FrameScollbar" Grid.Row="1"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
