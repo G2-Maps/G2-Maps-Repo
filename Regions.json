@@ -17,7 +17,7 @@
     },
 
     {
-      "name": "Valle d'Aosta",
+      "name": "Valle d'Aosta \/ Vall\u00e9e d'Aoste",
       "coordinates": {
         "x": 45.721837,
         "y": 7.419406
@@ -25,7 +25,7 @@
     },
 
     {
-      "name": "Bolzano",
+      "name": "Provincia Autonoma Bolzano \/ Bozen",
       "coordinates": {
         "x": 46.680465,
         "y": 11.429307
@@ -46,7 +46,7 @@
       }
     },
     {
-      "name": "Trento",
+      "name": "Provincia Autonoma Trento",
       "coordinates": {
         "x": 46.194023,
         "y": 10.967881
@@ -90,7 +90,7 @@
       }
     },
     {
-      "name": "Friuli Venezia Giulia",
+      "name": "Friuli-Venezia-Giulia",
       "coordinates": {
         "x": 46.135060,
         "y": 13.033311
