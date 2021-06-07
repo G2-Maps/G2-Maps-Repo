@@ -107,6 +107,7 @@ namespace G2_Maps.Model
 
     public class SummaryData
     {
+        public DateTime ultimo_aggiornamento { get; set; }
         public int dosi_Total { get; set; }
         public Dictionary<String, int> fornitoreTotal { get; set; }
         public ShortData consegneLatest {get; set;}

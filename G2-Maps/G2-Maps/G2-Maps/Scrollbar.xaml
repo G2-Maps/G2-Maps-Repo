@@ -31,7 +31,7 @@
 
             <StackLayout Grid.Row="3" >
                 <Button Text="Ultima Consegna" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#FFE1E1E1" TextColor="Black" CornerRadius="15" />
-                <Label  x:Name="Date_consegne" Text="" HorizontalOptions="End" FontAttributes="Italic" TextColor="Black"/>
+                <Label  x:Name="Date_consegne" Text="AAAAAA" HorizontalOptions="End" FontAttributes="Italic" TextColor="Black"/>
 
                 <StackLayout Orientation="Horizontal">
                     <StackLayout >

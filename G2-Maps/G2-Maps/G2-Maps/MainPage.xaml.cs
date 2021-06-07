@@ -25,27 +25,5 @@ namespace G2_Maps
             DataManagement.CheckUpdates();
             DataManagement.GetDataFile_Async();
         }
-
-        public async void  DisplayPins_Async(Regions regions)
-        {
-            foreach (var region in regions.data)
-            {
-                Pin _pin = new Pin()
-                {
-                    Address = region.name,
-                    Position = new Position(region.coordinates.x, region.coordinates.y)
-                };
-
-                _pin.InfoWindowClicked += async (s, args) =>
-                {
-                    LoadData_Async((Pin)s);
-                };
-            }
-        }
-
-        public async void LoadData_Async(Pin s)
-        {
-            var data = DataManagement.GetData_Regione(s.Address);
-        }
     }
 }

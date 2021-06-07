@@ -3,16 +3,13 @@ using System.IO;
 using System.Text;
 
 using System.Net.Http;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-
-using System.ComponentModel;
-
-using G2_Maps;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
@@ -21,6 +18,7 @@ namespace G2_Maps.Model
     class DataManagement
     {
         private static Consegne_Vaccini_Latest Consegne_Vaccini_Latest;
+        private static String last_update = "";
         private static String[] Files = 
             {
                 "consegne-vaccini-latest.json",
@@ -34,17 +32,18 @@ namespace G2_Maps.Model
         {
             try
             {
-                HttpClient httpClient = new HttpClient();
                 String file = "last-update-dataset.json";
                 String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), file);
 
 
                 String url = GitHubUrl + file;
 
-                String web_result = await httpClient.GetStringAsync(url);
+
+                last_update = Internet(url);
+
                 String local_result = !File.Exists(fileName) ? String.Empty : File.ReadAllText(fileName);
 
-                if (!web_result.Equals(local_result))
+                if (!last_update.Equals(local_result))
                 {
                     GetDataOnline_Async();
                 }
@@ -56,6 +55,16 @@ namespace G2_Maps.Model
                     "C'e` la probabilita` che i dati non siano aggiornati", "Ok");
             }
 
+        }
+
+        public static String Internet(String url)
+        {
+            WebRequest request = WebRequest.Create(url);
+            WebResponse response = request.GetResponse();
+            Stream dataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(dataStream);
+            var _ = reader.ReadToEnd();
+            return _;
         }
 
         public static async void GetDataFile_Async()
@@ -92,21 +101,20 @@ namespace G2_Maps.Model
             result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json"));
             var regions = JsonConvert.DeserializeObject<Regions>(result);
 
-            App.MyMainPage.DisplayPins_Async(regions);
+            MainPage.DataPage.DisplayPins(regions);
         }
 
-        public static SummaryData GetData_Regione(String name)
+        public static SummaryData GetData_Regione(String name) 
         {
-            name = name.ToUpper();
-
-            var consegneVaccini = Consegne_Vaccini_Latest.data.Where(p => p.nome_area.ToUpper().Equals(name))
+            var b = Consegne_Vaccini_Latest.data;
+            var consegneVaccini = b.Where(p => p.nome_area.Equals(name))
                                     .OrderBy(c => c.data_consegna)
                                     .Select(f => new ShortData
                                     { 
                                         data_consegna = f.data_consegna, 
                                         fornitore = f.fornitore, 
                                         numero_dosi = f.numero_dosi
-                                    });
+                                    }).ToList();
 
             var consegneLatest = consegneVaccini.Last();
 
@@ -122,6 +130,7 @@ namespace G2_Maps.Model
 
             var a = new SummaryData
             {
+                ultimo_aggiornamento = JsonConvert.DeserializeObject<LastUpdate>(last_update).ultimo_aggiornamento,
                 dosi_Total = numero_dosiTotal,
                 fornitoreTotal = fornitoreTotal,
                 consegneLatest = consegneLatest,
@@ -135,19 +144,17 @@ namespace G2_Maps.Model
         {
             try
             {
-                HttpClient httpClient = new HttpClient();
-
                 foreach (String file in Files)
                 {
                     String fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), file);
                     String url = GitHubUrl + file;
-                    String result = await httpClient.GetStringAsync(url);
+                    String result = Internet(url);
                     File.WriteAllText(fileName, result);
                 }
 
                 String _fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json");
                 String _url = "https://raw.githubusercontent.com/G2-Maps/G2-Maps-Repo/main/Regions.json";
-                String _result = await httpClient.GetStringAsync(_url);
+                String _result = Internet(_url);
                 File.WriteAllText(_fileName, _result);
 
             }

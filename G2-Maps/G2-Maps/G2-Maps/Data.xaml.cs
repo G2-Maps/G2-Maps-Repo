@@ -8,6 +8,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Xaml;
 
+using G2_Maps.Model;
+
 namespace G2_Maps
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -38,6 +40,26 @@ namespace G2_Maps
             };
 
             viewMap.Pins.Add(pin);
+        }
+
+        public void DisplayPins(Regions regions)
+        {
+            foreach (var region in regions.data)
+            {
+                Pin _pin = new Pin()
+                {
+                    Label = region.name,
+                    Address = "Click for more info",
+                    Position = new Position(region.coordinates.x, region.coordinates.y)
+                };
+
+                _pin.InfoWindowClicked += async (s, args) =>
+                {
+                    MainPage.ScrollbarPage.LoadData((Pin)s);
+                };
+
+                viewMap.Pins.Add(_pin);
+            }
         }
     }
 }
