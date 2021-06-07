@@ -6,14 +6,11 @@ namespace G2_Maps
 {
     public partial class App : Application
     {
-        public static MainPage MyMainPage { get; set; }
-
         public App()
         {
             InitializeComponent();
 
-            MyMainPage = new MainPage();
-            MainPage = MyMainPage;
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()

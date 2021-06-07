@@ -6,7 +6,8 @@
              x:Class="G2_Maps.MainPage">
 
     <Grid >
-        <Frame x:Name="MainFrame"/>
+        <maps:Map x:Name="viewMap" MapType="Street"/>
     </Grid>
 
 </ContentPage>
+

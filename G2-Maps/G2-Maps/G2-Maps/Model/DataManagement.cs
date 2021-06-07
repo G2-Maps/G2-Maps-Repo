@@ -19,7 +19,7 @@ namespace G2_Maps.Model
     {
         private static Consegne_Vaccini_Latest Consegne_Vaccini_Latest;
         private static String last_update = "";
-        private static String[] Files = 
+        private static String[] Files =
             {
                 "consegne-vaccini-latest.json",
                 "punti-somministrazione-latest.json"
@@ -51,7 +51,7 @@ namespace G2_Maps.Model
             }
             catch (Exception)
             {
-                await App.MyMainPage.DisplayAlert("Errore di connessione", "Nessuna connessione internet, utilizzo dei dati locali in corso...\n" +
+                await App.Current.MainPage.DisplayAlert("Errore di connessione", "Nessuna connessione internet, utilizzo dei dati locali in corso...\n" +
                     "C'e` la probabilita` che i dati non siano aggiornati", "Ok");
             }
 
@@ -75,7 +75,7 @@ namespace G2_Maps.Model
 
                 if (!File.Exists(fileName))
                 {
-                    await App.MyMainPage.DisplayAlert("Errore nei dati", "Dati locali non disponibili", "Chiudi l'applicazione");
+                    await App.Current.MainPage.DisplayAlert("Errore nei dati", "Dati locali non disponibili", "Chiudi l'applicazione");
                     throw new Exception();
                 }
             }
@@ -84,7 +84,7 @@ namespace G2_Maps.Model
 
             if (!File.Exists(_fileName))
             {
-                await App.MyMainPage.DisplayAlert("Errore nei dati", "Dati locali non disponibili", "Chiudi l'applicazione");
+                await App.Current.MainPage.DisplayAlert("Errore nei dati", "Dati locali non disponibili", "Chiudi l'applicazione");
                 throw new Exception();
             }
 
@@ -95,24 +95,21 @@ namespace G2_Maps.Model
             result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Files[0]));
             Consegne_Vaccini_Latest = JsonConvert.DeserializeObject<Consegne_Vaccini_Latest>(result);
 
-            result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), Files[1]));
-            var punti_somministrazione_latest = JsonConvert.DeserializeObject<Punti_Somministrazione_Latest>(result);
-
             result = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Regions.json"));
             var regions = JsonConvert.DeserializeObject<Regions>(result);
 
-            MainPage.DataPage.DisplayPins(regions);
+            ((MainPage)App.Current.MainPage).DisplayPins(regions);
         }
 
-        public static SummaryData GetData_Regione(String name) 
+        public static SummaryData GetData_Regione(String name)
         {
             var b = Consegne_Vaccini_Latest.data;
             var consegneVaccini = b.Where(p => p.nome_area.Equals(name))
                                     .OrderBy(c => c.data_consegna)
                                     .Select(f => new ShortData
-                                    { 
-                                        data_consegna = f.data_consegna, 
-                                        fornitore = f.fornitore, 
+                                    {
+                                        data_consegna = f.data_consegna,
+                                        fornitore = f.fornitore,
                                         numero_dosi = f.numero_dosi
                                     }).ToList();
 
@@ -160,10 +157,10 @@ namespace G2_Maps.Model
             }
             catch (Exception)
             {
-                await App.MyMainPage.DisplayAlert("Errore di connessione", "Nessuna connessione internet, utilizzo dei dati locali in corso...\n" +
+                await App.Current.MainPage.DisplayAlert("Errore di connessione", "Nessuna connessione internet, utilizzo dei dati locali in corso...\n" +
                     "C'e` la probabilita` che i dati non siano aggiornati", "Ok");
             }
-            
+
         }
     }
 }
