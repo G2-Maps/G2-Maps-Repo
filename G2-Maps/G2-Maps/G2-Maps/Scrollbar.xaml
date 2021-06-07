@@ -4,7 +4,7 @@
              x:Class="G2_Maps.Scrollbar">
 
     <ContentPage.Content>
-        <Grid BackgroundColor="#FFE1E1E1">
+        <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -20,17 +20,17 @@
             </StackLayout>
 
             <StackLayout Grid.Row="1">
-                <Button Text="Vaccini Gionalieri" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
+                <Button Text="Vaccini Gionalieri" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#FFE1E1E1" TextColor="Black" CornerRadius="15" />
                 <Label x:Name="vacciniGiorn" Text=""   HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Italic"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" >
-                <Button Text="Vaccini Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
+                <Button Text="Vaccini Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#FFE1E1E1" TextColor="Black" CornerRadius="15" />
                 <Label x:Name="vacciniTot" Text=""  HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Italic" />
             </StackLayout>
 
             <StackLayout Grid.Row="3" >
-                <Button Text="Ultima Consegna" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
+                <Button Text="Ultima Consegna" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#FFE1E1E1" TextColor="Black" CornerRadius="15" />
                 <Label  x:Name="Date_consegne" Text="" HorizontalOptions="End" FontAttributes="Italic" TextColor="Black"/>
 
                 <StackLayout Orientation="Horizontal">
@@ -46,11 +46,11 @@
             </StackLayout>
 
             <StackLayout Grid.Row="4" >
-                <Button Text="Consegne Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="White" TextColor="Black" CornerRadius="15" />
+                <Button Text="Consegne Totali" FontAttributes="Italic" HorizontalOptions="Center" VerticalOptions="Start" BackgroundColor="#FFE1E1E1" TextColor="Black" CornerRadius="15" />
                 <StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <Label Text="N' consegne totali:"  HorizontalOptions="Start" FontAttributes="Italic" TextColor="Black"/>
-                        <Label Text=""  FontAttributes="Italic" TextColor="Black"/>
+                        <Label x:Name="ConsegneTot" Text=""  FontAttributes="Italic" TextColor="Black"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal">
                         <StackLayout >
